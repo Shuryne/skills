@@ -5,6 +5,12 @@ description: Splits pending work into atomic commits and writes Conventional-Com
 
 # Git Commit Conventions
 
+## Output language
+
+This document is English so it reads as a standalone reference. The commit messages it produces are
+Chinese — subject and body only; type, scope and footer keywords stay English. The single example at
+the end is a literal specimen of that output, not an exception to this rule.
+
 ## Flow
 
 When asked to commit:
@@ -47,18 +53,22 @@ Staging:
 ## Message format
 
 ```
-<type>(<scope>): <中文祈使句主题，≤50 字符，句末不加句号>
+<type>(<scope>): <imperative subject, ≤50 characters, no trailing period>
 
-<正文：为什么要改，而不是改了什么。72 字符换行。>
+<body: why the change was made, not what changed. Wrapped at 72 characters.>
 
-<footer：BREAKING CHANGE / 关联 issue / 工具 trailer>
+<footer: BREAKING CHANGE / issue reference / tool trailer>
 ```
+
+The 50-character subject limit is counted in characters, not words — a Chinese subject fits
+considerably more than the English gloss of it suggests.
 
 - Type and scope are English and lowercase; the subject and body are **Chinese by default**. Use
   another language only when explicitly asked, or when the repository's existing history is clearly
   in that language — consistency with the repo wins.
 - Scope is optional; use the module or resource name (`auth`, `user`, `deps`), not a file path.
-- The subject says what the commit does, imperatively: `修复登录后 token 未刷新`, not `修复了……`.
+- The subject says what the commit does, imperatively — "fix the token not refreshing after login",
+  never the past tense "fixed ...".
 - The body explains **why**: the problem, the constraint, the reason this approach was chosen. Skip
   the body only when the subject is genuinely self-explanatory (typo fix, dependency bump).
 - Never restate the diff line by line in the body — the diff is already there.
@@ -76,27 +86,14 @@ Staging:
 | `ci`       | CI configuration                                                  |
 | `chore`    | Housekeeping that fits nothing above                              |
 
-Examples:
-
-```
-feat(auth): 支持手机号验证码登录
-
-原有账号体系只有邮箱注册，运营侧反馈国内用户注册流失严重。
-验证码走短信服务商，10 分钟有效，同一号码 60 秒内只能发一次。
-```
+A literal specimen of the output — note that the body gives the reason and the constraint, and that
+it states explicitly what was *not* done, so the next commit's scope is unambiguous:
 
 ```
 refactor(user): 抽出 user_repository，隔离数据访问
 
 service 里直接拼 SQL 导致业务规则和查询逻辑混在一起，加缓存时
 无从下手。本次只搬运代码，行为不变，缓存在后续提交中加入。
-```
-
-```
-fix(order): 修复并发下单导致库存扣成负数
-
-扣减库存与校验之间存在竞态，压测 50 并发必现。改为在 UPDATE 语句
-里带 stock >= quantity 条件，由数据库保证原子性。
 ```
 
 ## Reorganizing existing commits
