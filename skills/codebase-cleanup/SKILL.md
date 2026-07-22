@@ -9,6 +9,12 @@ A periodic pass that pays down structural debt so later feature work and bug fix
 clean base. Every change here is **behavior-preserving**: the codebase does the same thing
 afterwards, only clearer and more consistent.
 
+## Output language
+
+This document is English so it reads as a standalone reference. Everything produced for the user —
+the plan, the report — is written in Chinese. The English section headings and field labels in the
+examples below are illustrative, not literal strings: translate them along with the content.
+
 ## Scope
 
 Optional argument selects the area — `frontend`, `backend`, `docs`; default is everything.
@@ -53,40 +59,35 @@ Present the plan and **wait for approval**. Do not start editing, not even the "
 Group findings in execution order, one entry per intended commit:
 
 ```
-### 1. 删除（低风险）
-### 2. 重命名 / 移动（机械可验证）
-### 3. 去重 / 抽取（结构性，风险最高）
-### 4. 一致性对齐
-### 5. 文档与注释同步
+### 1. Deletions (low risk)
+### 2. Renames / moves (mechanically verifiable)
+### 3. Dedup / extraction (structural, highest risk)
+### 4. Consistency alignment
+### 5. Docs and comments
 ```
 
-The plan is a decision document, not a proof. The reader is deciding **which entries to approve**, so
-each one answers two questions — what is wrong, and what will be done — and nothing else:
+The plan is a decision document, not a proof: each entry says what is wrong and what will be done,
+and nothing else.
 
 ```
-#### 1.2 AcpEngine.caps() 及其依赖链只写不读
-- 问题：caps() 全仓无调用方，写入的 SessionCaps.models / reasonings 也无人读取 —— 约 30 行死代码长得像一套能力协商接口，后来的人会当它在用。
-- 处理：删 caps() 声明与实现、models / reasonings 字段、SelectChoice、deriveSelectCaps 的 choices 分支；保留 currentModel（meta 事件在读）。
-- engine.ts:280-282、types.ts:53-56,68 · 2 文件 ≈30 行
+#### 1.2 AcpEngine.caps() and its dependency chain are write-only
+- Problem: caps() has no caller anywhere in the repo, and the SessionCaps.models / reasonings it
+  writes are never read — ~30 lines of dead code shaped like a live capability-negotiation API.
+- Fix: delete the caps() declaration and implementation, the models / reasonings fields,
+  SelectChoice, and the choices branch of deriveSelectCaps; keep currentModel, read by the meta event.
+- engine.ts:280-282, types.ts:53-56,68 · 2 files ≈30 lines
 ```
 
-- **问题 states the fact and why it is a problem, in one breath.** "字段只写不读" is a fact; "字段只写
-  不读，30 行死代码看着像在用" is a problem. Never split the cost into its own line — a field that
-  must be filled gets filled, and "提升可维护性" on every entry gives the reader nothing to rank by.
-  If an entry cannot be phrased as costing something concrete, it is not worth proposing — drop it.
-- Evidence is gathered in full during the audit but **not printed in full**. One trailing line with
-  the locations and the rough size is what the reader needs; the audit trail exists to keep the
-  finding honest, not to be read. A finding that needs its derivation shown to be believed is not
-  yet proven.
-- Verification is a standing rule of step 3 — do not restate it per entry. Mention it only when an
-  entry is *not* covered by the build or the tests and needs checking by hand.
+- The problem line carries the fact **and** why it is a problem, in one sentence. Never give the cost
+  a field of its own: a field that must be filled gets filled with "improves maintainability". An
+  entry whose cost cannot be stated concretely is not worth proposing.
+- Evidence is collected in full during the audit, printed only as the trailing location line. A
+  finding that needs its derivation shown to be believed is not yet proven.
+- Entries where cleanup and behavior change are hard to tell apart are marked as needing the user's
+  call, with the two options in one sentence each, listed ahead of the mechanical ones.
 
-Where cleanup and a behavior change are hard to tell apart, do not decide alone: mark the entry
-**⚠️ 需要你定** and give the two options in one sentence each. These are the entries the user is
-actually needed for, so list them ahead of the mechanical ones rather than burying them.
-
-End the plan with a **发现但不处理** list — bugs, performance issues, missing tests — so nothing is
-lost even though it is out of scope.
+End the plan with a **found but not touched** list — bugs, performance issues, missing tests — so
+nothing is lost even though it is out of scope.
 
 Keep a plan reviewable. On a large codebase, propose one focused batch rather than a sweep nobody
 can check; note what is deferred to a next pass. The user may approve only part of the plan — treat
