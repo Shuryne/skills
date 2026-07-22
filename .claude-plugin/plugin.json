@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "dev-skills",
+  "displayName": "Personal Dev Skills",
+  "version": "0.1.0",
+  "description": "Personal coding conventions as skills, so every new project starts with the same habits",
+  "author": {
+    "name": "shuryne"
+  },
+  "keywords": ["conventions", "python", "fastapi", "backend"],
+  "license": "MIT"
+}
