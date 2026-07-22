@@ -10,7 +10,7 @@
       "name": "dev-skills",
       "source": "./",
       "description": "Personal coding conventions as skills (Python backend, more to come)",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "category": "workflow",
       "tags": ["conventions", "python", "fastapi", "backend"]
     }
