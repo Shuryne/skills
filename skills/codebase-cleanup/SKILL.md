@@ -54,16 +54,37 @@ Group findings in execution order, one entry per intended commit:
 
 ```
 ### 1. 删除（低风险）
-- [证据] app/utils/format.py:12-40 与 app/helpers/text.py:8-33 完全重复，后者无引用
-  → 删除 app/helpers/text.py，2 处引用改指向 format.py
-
 ### 2. 重命名 / 移动（机械可验证）
 ### 3. 去重 / 抽取（结构性，风险最高）
 ### 4. 一致性对齐
 ### 5. 文档与注释同步
 ```
 
-Each entry states: the evidence, the action, how many files it touches, and how it will be verified.
+The plan is a decision document, not a proof. The reader is deciding **which entries to approve**, so
+each one answers two questions — what is wrong, and what will be done — and nothing else:
+
+```
+#### 1.2 AcpEngine.caps() 及其依赖链只写不读
+- 问题：caps() 全仓无调用方，写入的 SessionCaps.models / reasonings 也无人读取 —— 约 30 行死代码长得像一套能力协商接口，后来的人会当它在用。
+- 处理：删 caps() 声明与实现、models / reasonings 字段、SelectChoice、deriveSelectCaps 的 choices 分支；保留 currentModel（meta 事件在读）。
+- engine.ts:280-282、types.ts:53-56,68 · 2 文件 ≈30 行
+```
+
+- **问题 states the fact and why it is a problem, in one breath.** "字段只写不读" is a fact; "字段只写
+  不读，30 行死代码看着像在用" is a problem. Never split the cost into its own line — a field that
+  must be filled gets filled, and "提升可维护性" on every entry gives the reader nothing to rank by.
+  If an entry cannot be phrased as costing something concrete, it is not worth proposing — drop it.
+- Evidence is gathered in full during the audit but **not printed in full**. One trailing line with
+  the locations and the rough size is what the reader needs; the audit trail exists to keep the
+  finding honest, not to be read. A finding that needs its derivation shown to be believed is not
+  yet proven.
+- Verification is a standing rule of step 3 — do not restate it per entry. Mention it only when an
+  entry is *not* covered by the build or the tests and needs checking by hand.
+
+Where cleanup and a behavior change are hard to tell apart, do not decide alone: mark the entry
+**⚠️ 需要你定** and give the two options in one sentence each. These are the entries the user is
+actually needed for, so list them ahead of the mechanical ones rather than burying them.
+
 End the plan with a **发现但不处理** list — bugs, performance issues, missing tests — so nothing is
 lost even though it is out of scope.
 
