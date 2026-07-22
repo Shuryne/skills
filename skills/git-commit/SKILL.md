@@ -8,8 +8,7 @@ description: Splits pending work into atomic commits and writes Conventional-Com
 ## Output language
 
 This document is English so it reads as a standalone reference. The commit messages it produces are
-Chinese — subject and body only; type, scope and footer keywords stay English. The single example at
-the end is a literal specimen of that output, not an exception to this rule.
+Chinese — subject and body only; type, scope and footer keywords stay English.
 
 ## Flow
 
@@ -71,6 +70,8 @@ considerably more than the English gloss of it suggests.
   never the past tense "fixed ...".
 - The body explains **why**: the problem, the constraint, the reason this approach was chosen. Skip
   the body only when the subject is genuinely self-explanatory (typo fix, dependency bump).
+- When a commit deliberately leaves related work undone, the body says so. It marks where the next
+  commit starts, and stops a reviewer reading the omission as an oversight.
 - Never restate the diff line by line in the body — the diff is already there.
 - Breaking changes get a `BREAKING CHANGE:` footer describing the migration.
 
@@ -85,16 +86,6 @@ considerably more than the English gloss of it suggests.
 | `build`    | Build system, dependencies, packaging                             |
 | `ci`       | CI configuration                                                  |
 | `chore`    | Housekeeping that fits nothing above                              |
-
-A literal specimen of the output — note that the body gives the reason and the constraint, and that
-it states explicitly what was *not* done, so the next commit's scope is unambiguous:
-
-```
-refactor(user): 抽出 user_repository，隔离数据访问
-
-service 里直接拼 SQL 导致业务规则和查询逻辑混在一起，加缓存时
-无从下手。本次只搬运代码，行为不变，缓存在后续提交中加入。
-```
 
 ## Reorganizing existing commits
 
