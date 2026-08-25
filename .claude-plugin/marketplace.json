@@ -11,7 +11,7 @@
       "name": "shuryne-skills",
       "source": "./",
       "description": "Focused engineering workflows for cleanup, commits, and Python backends.",
-      "version": "0.3.1",
+      "version": "0.3.2",
       "category": "engineering",
       "tags": ["engineering", "git", "python", "fastapi"]
     }
