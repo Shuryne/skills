@@ -1,39 +1,42 @@
-# skills
+# Shuryne Skills
 
-Personal development-convention skills for [Claude Code](https://code.claude.com), packaged as a
-plugin marketplace. Install once and every project starts with the same habits instead of
-re-teaching an agent from scratch.
+Reusable engineering workflows for Claude Code, Codex, and other agents that support the Agent Skills format. The collection favors small, focused skills that preserve project context and user control.
 
 ## Install
 
+### Codex
+
 ```bash
-/plugin marketplace add shuryne/skills
-/plugin install dev-skills@shuryne-skills
+codex plugin marketplace add Shuryne/skills
+codex plugin add shuryne-skills@shuryne
+```
+
+Restart Codex or open a new task after installing or upgrading so the current skill definitions are loaded.
+
+### Claude Code
+
+```text
+/plugin marketplace add Shuryne/skills
+/plugin install shuryne-skills@shuryne
 /reload-plugins
 ```
 
-Local development:
+For local development, add the repository root as the marketplace source.
 
-```bash
-/plugin marketplace add ~/work/skills
-```
+## Upgrade from 0.2.x
+
+Version 0.3.0 renames the plugin from `dev-skills` to `shuryne-skills` and the marketplace from `shuryne-skills` to `shuryne`. Remove the old installation and add the marketplace and plugin again with the commands above. The `python-backend` skill was also renamed to `python-backend-conventions`.
 
 ## Skills
 
-| Skill                                            | What it does                                                                                |
-| ------------------------------------------------ | ------------------------------------------------------------------------------------------- |
-| [python-backend](skills/python-backend/SKILL.md) | Python backend conventions: uv + Python 3.13 + FastAPI + Loguru + Scalar, naming rules, bilingual OpenAPI docs, daily-rotated logs |
-| [git-commit](skills/git-commit/SKILL.md)         | Atomic commit splitting and Conventional-Commits messages with Chinese subjects and why-focused bodies |
-| [codebase-cleanup](skills/codebase-cleanup/SKILL.md) | Periodic behavior-preserving cleanup: audit for duplication, inconsistency and doc drift, plan for approval, then execute |
+| Skill | Invocation | Purpose |
+| --- | --- | --- |
+| [`codebase-cleanup`](skills/codebase-cleanup/SKILL.md) | Automatic or explicit | Audit code and documentation, propose a prioritized cleanup plan, and wait for approval before editing. |
+| [`git-commit`](skills/git-commit/SKILL.md) | Explicit only | Inspect pending work and create safe, coherent commits that follow repository conventions. |
+| [`python-backend-conventions`](skills/python-backend-conventions/SKILL.md) | Automatic or explicit | Build consistent services with uv, FastAPI, Pydantic, Loguru, Scalar, Ruff, and pytest. |
 
-Each skill triggers automatically when the task matches its description, or can be invoked directly
-as `/dev-skills:<skill-name>`.
-
-## Using without Claude Code
-
-The skills are plain markdown. Point any agent at `skills/<name>/SKILL.md` — for Codex, referencing
-the file (or copying it into `AGENTS.md`) works the same way.
+In Codex, invoke a skill explicitly with `$skill-name`. Claude Code exposes installed skills through its plugin commands and skill picker. Automatic invocation depends on the skill description and its platform-specific policy.
 
 ## License
 
-MIT
+The repository is licensed under the [MIT License](LICENSE).
