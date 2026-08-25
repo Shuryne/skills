@@ -1,12 +1,27 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
-  "name": "dev-skills",
-  "displayName": "Personal Dev Skills",
-  "version": "0.2.0",
-  "description": "Personal coding conventions as skills, so every new project starts with the same habits",
+  "name": "shuryne-skills",
+  "displayName": "Shuryne Skills",
+  "version": "0.3.0",
+  "description": "Focused engineering workflows for codebase cleanup, Git commits, and Python backends.",
   "author": {
-    "name": "shuryne"
+    "name": "Shuryne",
+    "url": "https://github.com/Shuryne"
   },
-  "keywords": ["conventions", "python", "fastapi", "backend"],
-  "license": "MIT"
+  "homepage": "https://github.com/Shuryne/skills",
+  "repository": "https://github.com/Shuryne/skills",
+  "keywords": [
+    "engineering",
+    "skills",
+    "codebase-cleanup",
+    "git",
+    "python",
+    "fastapi"
+  ],
+  "license": "MIT",
+  "skills": [
+    "./skills/codebase-cleanup",
+    "./skills/git-commit",
+    "./skills/python-backend-conventions"
+  ]
 }

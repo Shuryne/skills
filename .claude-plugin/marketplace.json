@@ -1,18 +1,19 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
-  "name": "shuryne-skills",
-  "description": "Personal development-convention skills, reusable across projects",
+  "name": "shuryne",
+  "description": "Shuryne's reusable engineering skills for coding agents.",
   "owner": {
-    "name": "shuryne"
+    "name": "Shuryne",
+    "url": "https://github.com/Shuryne"
   },
   "plugins": [
     {
-      "name": "dev-skills",
+      "name": "shuryne-skills",
       "source": "./",
-      "description": "Personal coding conventions as skills (Python backend, more to come)",
-      "version": "0.2.0",
-      "category": "workflow",
-      "tags": ["conventions", "python", "fastapi", "backend"]
+      "description": "Focused engineering workflows for cleanup, commits, and Python backends.",
+      "version": "0.3.0",
+      "category": "engineering",
+      "tags": ["engineering", "git", "python", "fastapi"]
     }
   ]
 }
