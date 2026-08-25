@@ -1,6 +1,6 @@
 interface:
   display_name: "Codebase Cleanup"
-  short_description: "Audit code and docs before making changes"
-  default_prompt: "Use $codebase-cleanup to audit this project and propose a prioritized cleanup plan before editing."
+  short_description: "Improve code and docs with a plan first"
+  default_prompt: "Use $codebase-cleanup to review and improve this project's code and documentation, and propose a complete plan before editing."
 policy:
   allow_implicit_invocation: true
