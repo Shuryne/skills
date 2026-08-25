@@ -31,7 +31,7 @@ Version 0.3.0 renames the plugin from `dev-skills` to `shuryne-skills` and the m
 
 | Skill | Invocation | Purpose |
 | --- | --- | --- |
-| [`codebase-cleanup`](skills/codebase-cleanup/SKILL.md) | Automatic or explicit | Audit code and documentation, propose a prioritized cleanup plan, and wait for approval before editing. |
+| [`codebase-cleanup`](skills/codebase-cleanup/SKILL.md) | Automatic or explicit | Review and improve code and documentation, proposing a complete plan before editing. |
 | [`git-commit`](skills/git-commit/SKILL.md) | Explicit only | Inspect pending work and create safe, coherent commits that follow repository conventions. |
 | [`python-backend-conventions`](skills/python-backend-conventions/SKILL.md) | Automatic or explicit | Build consistent services with uv, FastAPI, Pydantic, Loguru, Scalar, Ruff, and pytest. |
 

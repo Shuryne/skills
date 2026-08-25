@@ -1,6 +1,6 @@
 {
   "name": "shuryne-skills",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Focused engineering workflows for codebase cleanup, Git commits, and Python backends.",
   "author": {
     "name": "Shuryne",
@@ -21,13 +21,13 @@
   "interface": {
     "displayName": "Shuryne Skills",
     "shortDescription": "Reusable engineering workflows for coding agents",
-    "longDescription": "Audit and improve codebases, create coherent Git commits, and apply opinionated Python backend conventions.",
+    "longDescription": "Review and improve codebases and documentation, create coherent Git commits, and apply opinionated Python backend conventions.",
     "developerName": "Shuryne",
     "category": "Developer Tools",
     "capabilities": ["Read", "Write"],
     "websiteURL": "https://github.com/Shuryne/skills",
     "defaultPrompt": [
-      "Audit this codebase and propose a cleanup plan before editing.",
+      "Review and improve this codebase and its documentation, proposing a complete plan before editing.",
       "Create safe, coherent commits from the current changes.",
       "Apply these Python backend conventions to this service."
     ]
