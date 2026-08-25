@@ -32,7 +32,7 @@ Version 0.3.0 renames the plugin from `dev-skills` to `shuryne-skills` and the m
 | Skill | Invocation | Purpose |
 | --- | --- | --- |
 | [`codebase-cleanup`](skills/codebase-cleanup/SKILL.md) | Automatic or explicit | Review and improve code and documentation, proposing a complete plan before editing. |
-| [`git-commit`](skills/git-commit/SKILL.md) | Explicit only | Inspect pending work and create safe, coherent commits that follow repository conventions. |
+| [`git-commit`](skills/git-commit/SKILL.md) | Explicit only | Create atomic commits that follow repository conventions. |
 | [`python-backend-conventions`](skills/python-backend-conventions/SKILL.md) | Automatic or explicit | Build consistent services with uv, FastAPI, Pydantic, Loguru, Scalar, Ruff, and pytest. |
 
 In Codex, invoke a skill explicitly with `$skill-name`. Claude Code exposes installed skills through its plugin commands and skill picker. Automatic invocation depends on the skill description and its platform-specific policy.
