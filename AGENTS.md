@@ -12,11 +12,17 @@ Codex or any other agent by pointing it at `skills/<name>/SKILL.md`.
 
 ```
 .
+├── .agents/
+│   └── plugins/marketplace.json # Codex marketplace catalog
 ├── .claude-plugin/
 │   ├── marketplace.json     # marketplace catalog — one plugin: dev-skills, source "./"
 │   └── plugin.json          # plugin manifest (repo root is the plugin)
+├── .codex-plugin/
+│   └── plugin.json          # Codex plugin manifest
 ├── skills/
 │   └── <skill-name>/SKILL.md
+├── tests/
+│   └── test_plugin_versions.py
 └── CLAUDE.md
 ```
 
@@ -33,8 +39,9 @@ everything.
 ```
 
 After publishing to GitHub, others use `/plugin marketplace add shuryne/skills`.
-Bump `version` in **both** `.claude-plugin/plugin.json` and the marketplace entry on every release —
-without a bump, installed copies do not update.
+On every release, keep the versions in `.codex-plugin/plugin.json`,
+`.claude-plugin/plugin.json`, and the `.claude-plugin/marketplace.json` plugin entry identical.
+Run `python3 -m unittest discover -s tests` to verify them before committing.
 
 ## Rules for authoring skills here
 
