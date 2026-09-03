@@ -9,14 +9,15 @@ Inspect all authorized staged, unstaged, and untracked changes before staging. R
 
 Before mutating the index, present an ordered commit plan with each group's intent, paths or hunks, and dependencies. Proceed without waiting unless the grouping is genuinely ambiguous, risky, or would alter already-staged user state.
 
-Use the review and revert boundary, not the feature label or file count, to choose groups:
+Use reviewability, coherent intent, and practical revert boundaries to choose groups:
 
-- Changes with different reviewer concerns or different reasons to revert must be separate, even when they support the same end-to-end feature.
-- Keep structural changes separate from behavior changes. Evaluate configuration, foundations, runtime or backend, authentication, UI, dependencies, generated artifacts, and incidental fixes as distinct concerns rather than one capability chain.
+- Each commit should have one understandable purpose. A commit may depend on earlier commits in the same series and does not need to deliver a complete standalone feature.
+- Prefer separating changes with different reviewer concerns or reasons to revert, but keep tightly coupled changes together when splitting would create misleading intermediate states, temporary scaffolding, or unnecessary validation failures.
+- Separate structural changes from behavior changes when the structural change remains meaningful and verifiable on its own. Otherwise, commit them together.
 - Keep tests and documentation with the behavior they verify or explain. Order foundations before consumers.
-- Combine concerns only when splitting them would leave an earlier commit incoherent or broken, and state that constraint in the plan.
+- Avoid introducing unnecessary breakage between commits. Preserve build and test integrity at every commit when practical or when the repository explicitly requires bisectable history.
 
-A large or cross-cutting diff should normally produce multiple commits. If the plan contains only one commit, explicitly explain before staging why every changed part has the same review concern and revert boundary and why no smaller coherent split exists. Never target a commit count based on lines changed or number of files.
+A large or cross-cutting diff should normally produce multiple commits. Use a single commit when the changes form one tightly coupled review unit, and briefly state that reasoning in the plan. Never target a commit count based on lines changed or number of files.
 
 Stage explicit paths or hunks for one planned group at a time and inspect the complete staged diff before each commit. Exclude secrets, generated noise, unrelated files, and unauthorized changes. Run appropriate validation and never bypass hooks.
 
