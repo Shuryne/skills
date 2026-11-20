@@ -1,28 +1,22 @@
 ---
 name: git-commit
-description: Plan and create reviewable atomic Git commits from authorized local changes while following repository conventions. Use only when the user explicitly asks to commit changes; do not use merely because a task has finished.
+description: Plans logical Git commit batches and creates them when explicitly requested. Use when the user asks for a commit plan or to commit local changes.
 ---
 
 # Git Commit
 
-Inspect all authorized staged, unstaged, and untracked changes before staging. Read repository guidance and recent commits for the established message format and language. Preserve unrelated work and treat the existing index as user state.
+Inspect staged, unstaged, and untracked changes within the user's scope.
 
-Before mutating the index, present an ordered commit plan with each group's intent, paths or hunks, and dependencies. Proceed without waiting unless the grouping is genuinely ambiguous, risky, or would alter already-staged user state.
+Split the work into small, independently reviewable commits. Give each
+commit one clear purpose and order the commits by dependency. Keep tests
+and documentation with the changes they cover.
 
-Use reviewability, coherent intent, and practical revert boundaries to choose groups:
+Before staging, present a concise, ordered plan with the scope and proposed
+message for each commit. Follow the repository's commit message conventions.
+If none exist, use Conventional Commits and write in the user's language.
 
-- Each commit should have one understandable purpose. A commit may depend on earlier commits in the same series and does not need to deliver a complete standalone feature.
-- Prefer separating changes with different reviewer concerns or reasons to revert, but keep tightly coupled changes together when splitting would create misleading intermediate states, temporary scaffolding, or unnecessary validation failures.
-- Separate structural changes from behavior changes when the structural change remains meaningful and verifiable on its own. Otherwise, commit them together.
-- Keep tests and documentation with the behavior they verify or explain. Order foundations before consumers.
-- Avoid introducing unnecessary breakage between commits. Preserve build and test integrity at every commit when practical or when the repository explicitly requires bisectable history.
-
-A large or cross-cutting diff should normally produce multiple commits. Use a single commit when the changes form one tightly coupled review unit, and briefly state that reasoning in the plan. Never target a commit count based on lines changed or number of files.
-
-Stage explicit paths or hunks for one planned group at a time and inspect the complete staged diff before each commit. Exclude secrets, generated noise, unrelated files, and unauthorized changes. Run appropriate validation and never bypass hooks.
-
-Follow repository commit conventions; if none exist, use Conventional Commits and the user's language. Report the resulting commits, validation, and authorized changes left uncommitted.
-
-Do not push or rewrite history unless explicitly requested.
-
-Respond in the user's language unless the user requests otherwise.
+When explicitly asked to commit, stage one planned batch at a time, review
+the staged diff, and run relevant checks. Preserve unrelated work and
+existing staging outside the authorized scope. Do not bypass hooks.
+Report the commits, validation, and any authorized changes left uncommitted.
+Push or rewrite history only when explicitly requested.
