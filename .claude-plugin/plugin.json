@@ -3,7 +3,7 @@
   "name": "shuryne-skills",
   "displayName": "Shuryne Skills",
   "version": "0.3.5",
-  "description": "Focused engineering workflows for codebase cleanup, Git commits, and Python backends.",
+  "description": "Focused engineering workflows for codebase cleanup, Git commits, Python backends, React performance, and UI review.",
   "author": {
     "name": "Shuryne",
     "url": "https://github.com/Shuryne"
@@ -22,6 +22,8 @@
   "skills": [
     "./skills/codebase-cleanup",
     "./skills/git-commit",
-    "./skills/python-backend-conventions"
+    "./skills/python-backend-conventions",
+    "./skills/vercel-react-best-practices",
+    "./skills/web-design-guidelines"
   ]
 }
