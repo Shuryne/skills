@@ -1,12 +1,11 @@
-# CLAUDE.md
+# AGENTS.md
 
 ## What this repo is
 
-A personal skills repository, published as a Claude Code plugin marketplace. Each skill captures a
+A personal skills repository, published as a Claude Code and Codex plugin marketplace. Each skill captures a
 development habit so a new project does not require re-teaching the same conventions.
 
-The skills are written for Claude Code first; the plain-markdown SKILL.md files are also readable by
-Codex or any other agent by pointing it at `skills/<name>/SKILL.md`.
+The skills use plain Markdown and are available under `skills/<name>/SKILL.md`.
 
 ## Layout
 
@@ -15,7 +14,7 @@ Codex or any other agent by pointing it at `skills/<name>/SKILL.md`.
 ├── .agents/
 │   └── plugins/marketplace.json # Codex marketplace catalog
 ├── .claude-plugin/
-│   ├── marketplace.json     # marketplace catalog — one plugin: dev-skills, source "./"
+│   ├── marketplace.json     # marketplace catalog — one plugin: shuryne-skills, source "./"
 │   └── plugin.json          # plugin manifest (repo root is the plugin)
 ├── .codex-plugin/
 │   └── plugin.json          # Codex plugin manifest
@@ -23,7 +22,7 @@ Codex or any other agent by pointing it at `skills/<name>/SKILL.md`.
 │   └── <skill-name>/SKILL.md
 ├── tests/
 │   └── test_plugin_versions.py
-└── CLAUDE.md
+└── AGENTS.md
 ```
 
 Repo root doubles as both marketplace and plugin, so a single `/plugin marketplace add` installs
@@ -34,7 +33,7 @@ everything.
 ```bash
 # in Claude Code
 /plugin marketplace add ~/work/skills
-/plugin install dev-skills@shuryne-skills
+/plugin install shuryne-skills@shuryne
 /reload-plugins
 ```
 
@@ -62,10 +61,11 @@ Run `python3 -m unittest discover -s tests` to verify them before committing.
 
 ## Skills
 
-| Skill                                            | Covers                                                    |
-| ------------------------------------------------ | --------------------------------------------------------- |
-| [python-backend](skills/python-backend/SKILL.md) | uv + Python 3.13 + FastAPI + Loguru + Scalar conventions  |
-| [git-commit](skills/git-commit/SKILL.md)         | Atomic commits that follow repository conventions                  |
+| Skill | Covers |
+| --- | --- |
+| [codebase-cleanup](skills/codebase-cleanup/SKILL.md) | Codebase and documentation cleanup |
+| [git-commit](skills/git-commit/SKILL.md) | Atomic commits that follow repository conventions |
+| [python-backend-conventions](skills/python-backend-conventions/SKILL.md) | uv, FastAPI, Pydantic, Loguru, Scalar, Ruff, and pytest |
 
 ## Cross-cutting preferences (apply to future skills too)
 

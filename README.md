@@ -23,10 +23,6 @@ Restart Codex or open a new task after installing or upgrading so the current sk
 
 For local development, add the repository root as the marketplace source.
 
-## Upgrade from 0.2.x
-
-Version 0.3.0 renames the plugin from `dev-skills` to `shuryne-skills` and the marketplace from `shuryne-skills` to `shuryne`. Remove the old installation and add the marketplace and plugin again with the commands above. The `python-backend` skill was also renamed to `python-backend-conventions`.
-
 ## Skills
 
 | Skill | Invocation | Purpose |
