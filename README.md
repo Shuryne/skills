@@ -29,6 +29,7 @@ For local development, add the repository root as the marketplace source.
 | --- | --- | --- |
 | [`codebase-cleanup`](skills/codebase-cleanup/SKILL.md) | Automatic or explicit | Review and improve code and documentation, proposing a complete plan before editing. |
 | [`fastapi`](skills/fastapi/SKILL.md) | Automatic or explicit | Apply official FastAPI guidance for routing, dependencies, response models, and streaming. |
+| [`frontend-design`](skills/frontend-design/SKILL.md) | Automatic or explicit | Establish a visual direction and design new or existing interfaces around the product and its audience. |
 | [`git-commit`](skills/git-commit/SKILL.md) | Explicit only | Create atomic commits that follow repository conventions. |
 | [`vercel-react-best-practices`](skills/vercel-react-best-practices/SKILL.md) | Automatic or explicit | Apply Vercel performance guidance to React and Next.js code. |
 | [`web-design-guidelines`](skills/web-design-guidelines/SKILL.md) | Automatic or explicit | Review UI code against Vercel’s Web Interface Guidelines. |
@@ -39,6 +40,8 @@ In Codex, invoke a skill explicitly with `$skill-name`. Claude Code exposes inst
 
 `fastapi` is an unmodified upstream snapshot from [FastAPI release `0.165.0`](https://github.com/fastapi/fastapi/releases/tag/0.165.0), at commit [`05e6df7e906c3decba377c37548019973f40bf15`](https://github.com/fastapi/fastapi/tree/05e6df7e906c3decba377c37548019973f40bf15/fastapi/.agents/skills/fastapi). To update it, compare the skill directory at the recorded commit with the target release, then copy the full directory and update this pin.
 
+`frontend-design` is adapted from Anthropic's [upstream snapshot at `41bbe19d1a1a7eaab5e7bb9050a417e5c6cffc8f`](https://github.com/anthropics/skills/tree/41bbe19d1a1a7eaab5e7bb9050a417e5c6cffc8f/skills/frontend-design). The local copy moves the license reference out of the frontmatter. To update it, compare the upstream skill directory at the recorded and target commits, reapply that change, retain the upstream license, and update this pin.
+
 ## License
 
-The repository uses the [MIT License](LICENSE) by default. `vercel-react-best-practices` and `web-design-guidelines` are adapted from [Vercel’s Agent Skills](https://github.com/vercel-labs/agent-skills). The official [FastAPI skill](https://github.com/fastapi/fastapi/tree/05e6df7e906c3decba377c37548019973f40bf15/fastapi/.agents/skills/fastapi) is also licensed under MIT.
+The repository uses the [MIT License](LICENSE) by default. `vercel-react-best-practices` and `web-design-guidelines` are adapted from [Vercel’s Agent Skills](https://github.com/vercel-labs/agent-skills). The official [FastAPI skill](https://github.com/fastapi/fastapi/tree/05e6df7e906c3decba377c37548019973f40bf15/fastapi/.agents/skills/fastapi) is also licensed under MIT. Anthropic's `frontend-design` skill is licensed under [Apache 2.0](skills/frontend-design/LICENSE.txt).
