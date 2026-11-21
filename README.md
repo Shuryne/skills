@@ -32,10 +32,13 @@ For local development, add the repository root as the marketplace source.
 | [`frontend-design`](skills/frontend-design/SKILL.md) | Automatic or explicit | Establish a visual direction and design new or existing interfaces around the product and its audience. |
 | [`git-commit`](skills/git-commit/SKILL.md) | Explicit only | Create atomic commits that follow repository conventions. |
 | [`supabase-postgres-best-practices`](skills/supabase-postgres-best-practices/SKILL.md) | Automatic or explicit | Apply Supabase guidance to PostgreSQL schema, migrations, SQL, security, and performance. |
+| [`vercel-composition-patterns`](skills/vercel-composition-patterns/SKILL.md) | Automatic or explicit | Apply Vercel guidance to reusable React component APIs, composition, and shared state. |
 | [`vercel-react-best-practices`](skills/vercel-react-best-practices/SKILL.md) | Automatic or explicit | Apply Vercel performance guidance to React and Next.js code. |
 | [`web-design-guidelines`](skills/web-design-guidelines/SKILL.md) | Automatic or explicit | Review UI code against Vercel’s Web Interface Guidelines. |
 
 In Codex, invoke a skill explicitly with `$skill-name`. Claude Code exposes installed skills through its plugin commands and skill picker. Automatic invocation depends on the skill description and its platform-specific policy.
+
+`vercel-composition-patterns` is adapted from Vercel's [upstream snapshot at `5a37a63`](https://github.com/vercel-labs/agent-skills/tree/5a37a6329fbad3666c3207392a6a7c0110e92efb/skills/composition-patterns).
 
 `vercel-react-best-practices` is adapted from Vercel's [upstream snapshot at `dc8367e`](https://github.com/vercel-labs/agent-skills/tree/dc8367e6f91c022d83361f03c3313fa05e848ee5/skills/react-best-practices).
 
@@ -47,6 +50,6 @@ In Codex, invoke a skill explicitly with `$skill-name`. Claude Code exposes inst
 
 ## License
 
-The repository uses the [MIT License](LICENSE) by default. `vercel-react-best-practices` and `web-design-guidelines` are adapted from [Vercel’s Agent Skills](https://github.com/vercel-labs/agent-skills). The official [FastAPI skill](https://github.com/fastapi/fastapi/tree/05e6df7e906c3decba377c37548019973f40bf15/fastapi/.agents/skills/fastapi) is also licensed under MIT. Anthropic's `frontend-design` skill is licensed under [Apache 2.0](skills/frontend-design/LICENSE.txt).
+The repository uses the [MIT License](LICENSE) by default. `vercel-composition-patterns`, `vercel-react-best-practices`, and `web-design-guidelines` are adapted from [Vercel’s Agent Skills](https://github.com/vercel-labs/agent-skills). The official [FastAPI skill](https://github.com/fastapi/fastapi/tree/05e6df7e906c3decba377c37548019973f40bf15/fastapi/.agents/skills/fastapi) is also licensed under MIT. Anthropic's `frontend-design` skill is licensed under [Apache 2.0](skills/frontend-design/LICENSE.txt).
 
 Supabase's `supabase-postgres-best-practices` skill retains its [upstream MIT license](skills/supabase-postgres-best-practices/LICENSE).
