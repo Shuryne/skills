@@ -67,6 +67,7 @@ Run `python3 -m unittest discover -s tests` to verify them before committing.
 | [fastapi](skills/fastapi/SKILL.md) | Official FastAPI framework guidance |
 | [frontend-design](skills/frontend-design/SKILL.md) | Visual direction and frontend design |
 | [git-commit](skills/git-commit/SKILL.md) | Atomic commits that follow repository conventions |
+| [supabase-postgres-best-practices](skills/supabase-postgres-best-practices/SKILL.md) | PostgreSQL schema, migrations, SQL, security, and performance |
 | [vercel-react-best-practices](skills/vercel-react-best-practices/SKILL.md) | React and Next.js performance |
 | [web-design-guidelines](skills/web-design-guidelines/SKILL.md) | Web interface and accessibility reviews |
 

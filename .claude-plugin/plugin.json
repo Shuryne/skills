@@ -24,6 +24,7 @@
     "./skills/fastapi",
     "./skills/frontend-design",
     "./skills/git-commit",
+    "./skills/supabase-postgres-best-practices",
     "./skills/vercel-react-best-practices",
     "./skills/web-design-guidelines"
   ]
