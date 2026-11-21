@@ -1,6 +1,0 @@
-interface:
-  display_name: "Python Backend Conventions"
-  short_description: "Apply focused uv and FastAPI conventions"
-  default_prompt: "Use $python-backend-conventions to apply this project's Python backend stack and core conventions."
-policy:
-  allow_implicit_invocation: true

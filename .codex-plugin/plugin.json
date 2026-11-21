@@ -21,7 +21,7 @@
   "interface": {
     "displayName": "Shuryne Skills",
     "shortDescription": "Reusable engineering workflows for coding agents",
-    "longDescription": "Review and improve codebases and documentation, create atomic Git commits, apply opinionated Python backend conventions, optimize React performance, and review web interfaces.",
+    "longDescription": "Review and improve codebases and documentation, create atomic Git commits, apply official FastAPI guidance, optimize React performance, and review web interfaces.",
     "developerName": "Shuryne",
     "category": "Developer Tools",
     "capabilities": ["Read", "Write"],
@@ -29,7 +29,7 @@
     "defaultPrompt": [
       "Review and improve this codebase and its documentation, proposing a complete plan before editing.",
       "Create atomic commits from the current changes that follow this repository's conventions.",
-      "Apply these Python backend conventions to this service."
+      "Apply official FastAPI guidance to this service."
     ]
   }
 }

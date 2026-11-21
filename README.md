@@ -28,8 +28,8 @@ For local development, add the repository root as the marketplace source.
 | Skill | Invocation | Purpose |
 | --- | --- | --- |
 | [`codebase-cleanup`](skills/codebase-cleanup/SKILL.md) | Automatic or explicit | Review and improve code and documentation, proposing a complete plan before editing. |
+| [`fastapi`](skills/fastapi/SKILL.md) | Automatic or explicit | Apply official FastAPI guidance for routing, dependencies, response models, and streaming. |
 | [`git-commit`](skills/git-commit/SKILL.md) | Explicit only | Create atomic commits that follow repository conventions. |
-| [`python-backend-conventions`](skills/python-backend-conventions/SKILL.md) | Automatic or explicit | Build consistent services with uv, FastAPI, Pydantic, Loguru, Scalar, Ruff, and pytest. |
 | [`vercel-react-best-practices`](skills/vercel-react-best-practices/SKILL.md) | Automatic or explicit | Apply Vercel performance guidance to React and Next.js code. |
 | [`web-design-guidelines`](skills/web-design-guidelines/SKILL.md) | Automatic or explicit | Review UI code against Vercel’s Web Interface Guidelines. |
 
@@ -37,6 +37,8 @@ In Codex, invoke a skill explicitly with `$skill-name`. Claude Code exposes inst
 
 `vercel-react-best-practices` is adapted from Vercel's [upstream snapshot at `dc8367e`](https://github.com/vercel-labs/agent-skills/tree/dc8367e6f91c022d83361f03c3313fa05e848ee5/skills/react-best-practices).
 
+`fastapi` is an unmodified upstream snapshot from [FastAPI release `0.165.0`](https://github.com/fastapi/fastapi/releases/tag/0.165.0), at commit [`05e6df7e906c3decba377c37548019973f40bf15`](https://github.com/fastapi/fastapi/tree/05e6df7e906c3decba377c37548019973f40bf15/fastapi/.agents/skills/fastapi). To update it, compare the skill directory at the recorded commit with the target release, then copy the full directory and update this pin.
+
 ## License
 
-The repository is licensed under the [MIT License](LICENSE). The two frontend skills are adapted from [Vercel’s Agent Skills](https://github.com/vercel-labs/agent-skills), also licensed under MIT.
+The repository uses the [MIT License](LICENSE) by default. `vercel-react-best-practices` and `web-design-guidelines` are adapted from [Vercel’s Agent Skills](https://github.com/vercel-labs/agent-skills). The official [FastAPI skill](https://github.com/fastapi/fastapi/tree/05e6df7e906c3decba377c37548019973f40bf15/fastapi/.agents/skills/fastapi) is also licensed under MIT.

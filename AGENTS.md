@@ -64,8 +64,8 @@ Run `python3 -m unittest discover -s tests` to verify them before committing.
 | Skill | Covers |
 | --- | --- |
 | [codebase-cleanup](skills/codebase-cleanup/SKILL.md) | Codebase and documentation cleanup |
+| [fastapi](skills/fastapi/SKILL.md) | Official FastAPI framework guidance |
 | [git-commit](skills/git-commit/SKILL.md) | Atomic commits that follow repository conventions |
-| [python-backend-conventions](skills/python-backend-conventions/SKILL.md) | uv, FastAPI, Pydantic, Loguru, Scalar, Ruff, and pytest |
 | [vercel-react-best-practices](skills/vercel-react-best-practices/SKILL.md) | React and Next.js performance |
 | [web-design-guidelines](skills/web-design-guidelines/SKILL.md) | Web interface and accessibility reviews |
 
