@@ -63,6 +63,7 @@ Run `python3 -m unittest discover -s tests` to verify them before committing.
 
 | Skill | Covers |
 | --- | --- |
+| [code-simplify](skills/code-simplify/SKILL.md) | Focused simplification of recently changed code |
 | [codebase-cleanup](skills/codebase-cleanup/SKILL.md) | Codebase and documentation cleanup |
 | [fastapi](skills/fastapi/SKILL.md) | Official FastAPI framework guidance |
 | [frontend-design](skills/frontend-design/SKILL.md) | Visual direction and frontend design |

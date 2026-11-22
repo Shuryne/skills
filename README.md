@@ -27,6 +27,7 @@ For local development, add the repository root as the marketplace source.
 
 | Skill | Invocation | Purpose |
 | --- | --- | --- |
+| [`code-simplify`](skills/code-simplify/SKILL.md) | Automatic or explicit | Simplify recently changed code while preserving observable behavior. |
 | [`codebase-cleanup`](skills/codebase-cleanup/SKILL.md) | Automatic or explicit | Review and improve code and documentation, proposing a complete plan before editing. |
 | [`fastapi`](skills/fastapi/SKILL.md) | Automatic or explicit | Apply official FastAPI guidance for routing, dependencies, response models, and streaming. |
 | [`frontend-design`](skills/frontend-design/SKILL.md) | Automatic or explicit | Establish a visual direction and design new or existing interfaces around the product and its audience. |
@@ -37,6 +38,8 @@ For local development, add the repository root as the marketplace source.
 | [`web-design-guidelines`](skills/web-design-guidelines/SKILL.md) | Automatic or explicit | Review UI code against Vercel’s Web Interface Guidelines. |
 
 In Codex, invoke a skill explicitly with `$skill-name`. Claude Code exposes installed skills through its plugin commands and skill picker. Automatic invocation depends on the skill description and its platform-specific policy.
+
+`code-simplify` is adapted from the bundled `/simplify` prompts in Claude Code CLI `2.1.330`. To update it, extract both prompt variants from the target CLI and compare them with the recorded version. Keep their shared wording in one place and reapply the local frontmatter, single-pass default, explicit opt-in for parallel review, review-only handling, and verification step.
 
 `vercel-composition-patterns` is adapted from Vercel's [upstream snapshot at `5a37a63`](https://github.com/vercel-labs/agent-skills/tree/5a37a6329fbad3666c3207392a6a7c0110e92efb/skills/composition-patterns).
 
