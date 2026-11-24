@@ -7,7 +7,9 @@ description: Reviews and improves naming, repository layout, comments, and docum
 
 ## Scope
 
-Apply the three review areas below to the repository, modules, or paths the user requests. Honor any narrower focus the user specifies. Trace runtime behavior as needed to check a name, file placement, or documented claim. Report only findings that directly identify a problem in the review areas. For example, if a command has misleading help and a counting defect, report the help mismatch and cite the behavior the help needs to describe.
+When this skill is invoked, use the three areas below as the review criteria. A general request such as "review the whole codebase" means a conventions review of the current repository. Honor any target or narrower focus the user specifies.
+
+Trace runtime behavior to verify a specific convention problem. Keep a finding when correcting a name, file placement, comment, or documentation would address the problem while preserving intended behavior. For example, flag help that describes a command as read-only when it is intended to write files. An implementation defect that violates a correctly stated contract belongs to a correctness review.
 
 ## Naming Conventions
 
@@ -41,6 +43,6 @@ For each area, note what was checked. For each finding, provide the file and lin
 
 ### 3. Verify and report
 
-Collect all review results, verify the evidence with focused checks, and merge findings that describe the same issue. Summarize coverage by area, report verified findings, and surface unresolved convention or contract conflicts.
+Collect all review results, verify the evidence with focused checks, and merge findings that describe the same issue. Check each proposed correction against Scope before including the finding. Use one report section per applicable review area. In each section, state what was checked, list verified findings, and surface any unresolved convention or contract conflicts.
 
 For review-only requests, deliver the report. When asked to make changes, present a plan for approval before broad edits across modules. Preserve intended behavior and public contracts unless the user requests a change. After editing, verify affected imports, entry points, command examples, and documentation links, then run the relevant project checks.
