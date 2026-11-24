@@ -11,7 +11,7 @@
       "name": "shuryne-skills",
       "source": "./",
       "description": "Focused engineering workflows for codebase conventions, Git commits, Python backends, React performance, and UI review.",
-      "version": "0.6.0",
+      "version": "0.6.1",
       "category": "engineering",
       "tags": ["engineering", "git", "python", "fastapi"]
     }

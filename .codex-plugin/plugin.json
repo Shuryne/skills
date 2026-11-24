@@ -1,6 +1,6 @@
 {
   "name": "shuryne-skills",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Focused engineering workflows for codebase conventions, Git commits, Python backends, React performance, and UI review.",
   "author": {
     "name": "Shuryne",
