@@ -1,7 +1,7 @@
 {
   "name": "shuryne-skills",
   "version": "0.5.0",
-  "description": "Focused engineering workflows for codebase cleanup, Git commits, Python backends, React performance, and UI review.",
+  "description": "Focused engineering workflows for codebase conventions, Git commits, Python backends, React performance, and UI review.",
   "author": {
     "name": "Shuryne",
     "url": "https://github.com/Shuryne"
@@ -12,7 +12,7 @@
   "keywords": [
     "engineering",
     "skills",
-    "codebase-cleanup",
+    "codebase-conventions",
     "git",
     "python",
     "fastapi"
@@ -21,13 +21,13 @@
   "interface": {
     "displayName": "Shuryne Skills",
     "shortDescription": "Reusable engineering workflows for coding agents",
-    "longDescription": "Review and improve codebases and documentation, create atomic Git commits, apply official FastAPI guidance, optimize React performance, and review web interfaces.",
+    "longDescription": "Review naming, repository layout, comments, and documentation, create atomic Git commits, apply official FastAPI guidance, optimize React performance, and review web interfaces.",
     "developerName": "Shuryne",
     "category": "Developer Tools",
     "capabilities": ["Read", "Write"],
     "websiteURL": "https://github.com/Shuryne/skills",
     "defaultPrompt": [
-      "Review and improve this codebase and its documentation, proposing a complete plan before editing.",
+      "Review this repository's naming, layout, comments, and documentation against its conventions.",
       "Create atomic commits from the current changes that follow this repository's conventions.",
       "Apply official FastAPI guidance to this service."
     ]

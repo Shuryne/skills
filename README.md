@@ -28,7 +28,7 @@ For local development, add the repository root as the marketplace source.
 | Skill | Invocation | Purpose |
 | --- | --- | --- |
 | [`code-simplify`](skills/code-simplify/SKILL.md) | Automatic or explicit | Simplify recently changed code while preserving observable behavior. |
-| [`codebase-cleanup`](skills/codebase-cleanup/SKILL.md) | Automatic or explicit | Review and improve code and documentation, proposing a complete plan before editing. |
+| [`codebase-conventions`](skills/codebase-conventions/SKILL.md) | Automatic or explicit | Review naming, repository layout, comments, and documentation against project conventions. |
 | [`fastapi`](skills/fastapi/SKILL.md) | Automatic or explicit | Apply official FastAPI guidance for routing, dependencies, response models, and streaming. |
 | [`frontend-design`](skills/frontend-design/SKILL.md) | Automatic or explicit | Establish a visual direction and design new or existing interfaces around the product and its audience. |
 | [`git-commit`](skills/git-commit/SKILL.md) | Explicit only | Create atomic commits that follow repository conventions. |

@@ -3,7 +3,7 @@
   "name": "shuryne-skills",
   "displayName": "Shuryne Skills",
   "version": "0.5.0",
-  "description": "Focused engineering workflows for codebase cleanup, Git commits, Python backends, React performance, and UI review.",
+  "description": "Focused engineering workflows for codebase conventions, Git commits, Python backends, React performance, and UI review.",
   "author": {
     "name": "Shuryne",
     "url": "https://github.com/Shuryne"
@@ -13,7 +13,7 @@
   "keywords": [
     "engineering",
     "skills",
-    "codebase-cleanup",
+    "codebase-conventions",
     "git",
     "python",
     "fastapi"
@@ -21,7 +21,7 @@
   "license": "MIT",
   "skills": [
     "./skills/code-simplify",
-    "./skills/codebase-cleanup",
+    "./skills/codebase-conventions",
     "./skills/fastapi",
     "./skills/frontend-design",
     "./skills/git-commit",
