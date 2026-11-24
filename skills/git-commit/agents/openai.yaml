@@ -1,6 +1,0 @@
-interface:
-  display_name: "Git Commit"
-  short_description: "Plan and create reviewable atomic commits"
-  default_prompt: "Use $git-commit to plan commits by review concern, then create them in dependency order."
-policy:
-  allow_implicit_invocation: false

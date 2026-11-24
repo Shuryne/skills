@@ -31,7 +31,7 @@ For local development, add the repository root as the marketplace source.
 | [`codebase-conventions`](skills/codebase-conventions/SKILL.md) | Automatic or explicit | Review naming, repository layout, comments, and documentation against project conventions. |
 | [`fastapi`](skills/fastapi/SKILL.md) | Automatic or explicit | Apply official FastAPI guidance for routing, dependencies, response models, and streaming. |
 | [`frontend-design`](skills/frontend-design/SKILL.md) | Automatic or explicit | Establish a visual direction and design new or existing interfaces around the product and its audience. |
-| [`git-commit`](skills/git-commit/SKILL.md) | Explicit only | Create atomic commits that follow repository conventions. |
+| [`git-commit`](skills/git-commit/SKILL.md) | Automatic or explicit | Plan atomic commits and create them when requested. |
 | [`supabase-postgres-best-practices`](skills/supabase-postgres-best-practices/SKILL.md) | Automatic or explicit | Apply Supabase guidance to PostgreSQL schema, migrations, SQL, security, and performance. |
 | [`vercel-composition-patterns`](skills/vercel-composition-patterns/SKILL.md) | Automatic or explicit | Apply Vercel guidance to reusable React component APIs, composition, and shared state. |
 | [`vercel-react-best-practices`](skills/vercel-react-best-practices/SKILL.md) | Automatic or explicit | Apply Vercel performance guidance to React and Next.js code. |
