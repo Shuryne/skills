@@ -5,6 +5,10 @@ description: Reviews and improves naming, repository layout, comments, and docum
 
 # Codebase Conventions
 
+## Scope
+
+Apply the three review areas below to the repository, modules, or paths the user requests. Honor any narrower focus the user specifies. Trace runtime behavior as needed to check a name, file placement, or documented claim. Report only findings that directly identify a problem in the review areas. For example, if a command has misleading help and a counting defect, report the help mismatch and cite the behavior the help needs to describe.
+
 ## Naming Conventions
 
 - Use established domain terms for the same concept across files, directories, code, commands, and documentation. Follow the project's naming patterns for comparable items.
@@ -25,6 +29,18 @@ description: Reviews and improves naming, repository layout, comments, and docum
 
 ## Workflow
 
-1. Read the applicable project guidance and compare modules with similar responsibilities. Use established patterns where written rules are absent. Allow differences supported by distinct responsibilities or toolchain requirements. Surface unresolved conflicts in the project's conventions.
-2. For each finding, identify the location, the applicable convention or evidence, the concrete navigation or maintenance problem, and the proposed change. Present a plan for approval before editing when the request involves broad cleanup across modules.
-3. Preserve intended behavior and public contracts unless the user requests a change. Verify affected imports, entry points, command examples, and documentation links, then run the relevant project checks.
+### 1. Establish the review context
+
+Identify the scope and the revision or working tree under review. Read the applicable project guidance and locate relevant modules, entry points, and documentation. Compare modules with similar responsibilities. Use established patterns where written rules are absent, and allow differences supported by distinct responsibilities or toolchain requirements.
+
+### 2. Review each area
+
+Use one agent to review the areas in order by default. When the user explicitly requests parallel review and subagents are available, run one independent read-only reviewer per area concurrently. Give each reviewer the same scope, project guidance, and reporting requirements.
+
+For each area, note what was checked. For each finding, provide the file and line, the applicable convention or verifiable evidence, the concrete impact on navigation, understanding, or maintenance, and the smallest correction that addresses it.
+
+### 3. Verify and report
+
+Collect all review results, verify the evidence with focused checks, and merge findings that describe the same issue. Summarize coverage by area, report verified findings, and surface unresolved convention or contract conflicts.
+
+For review-only requests, deliver the report. When asked to make changes, present a plan for approval before broad edits across modules. Preserve intended behavior and public contracts unless the user requests a change. After editing, verify affected imports, entry points, command examples, and documentation links, then run the relevant project checks.
