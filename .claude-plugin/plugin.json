@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "shuryne-skills",
   "displayName": "Shuryne Skills",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "Focused engineering workflows for codebase conventions, Git commits, Python backends, React performance, and UI review.",
   "author": {
     "name": "Shuryne",
